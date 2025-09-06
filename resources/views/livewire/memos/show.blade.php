@@ -21,6 +21,24 @@ $destroy = function () {
 <div>
     <a href="{{ route('memos.index') }}">戻る</a>
     <h1>{{ $memo->title }}</h1>
+    <p><strong>優先度:</strong>
+        @switch($memo->priority)
+            @case(1)
+                低
+            @break
+
+            @case(2)
+                中
+            @break
+
+            @case(3)
+                高
+            @break
+
+            @default
+                不明
+        @endswitch
+    </p>
     <p>{!! nl2br(e($memo->body)) !!}</p>
 
     <button wire:click="edit">編集する</button>

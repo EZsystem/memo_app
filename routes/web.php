@@ -3,13 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 // 一覧ページ
-Volt::route('/memos', 'memos.index')->name('memos.index');
+Volt::route('/', 'memos.index')->name('memos.index');
 // 具体的なパスを先に設定
 // 新規作成ページ
 Volt::route('/memos/create', 'memos.create')->name('memos.create');
